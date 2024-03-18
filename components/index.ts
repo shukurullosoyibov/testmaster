@@ -1,0 +1,12 @@
+export { default as Hero } from "./Hero";
+export { default as Features } from "./Features";
+export { default as Phone } from "./Phone";
+export { default as Pricing } from "./Pricing";
+export { default as Partner } from "./Partner";
+export { default as Analytics } from "./Analytics";
+export { default as About } from "./About/About";
+export { default as Contacts } from "./Contact/Contacts";
+export { default as Faq } from "./Faq/Faq";
+export { default as Banner } from "./Banner";
+export { default as WhatWeCanDo } from "./WhatCanWeDo";
+export { default as WhatOurClientsSay } from "./About/WhatOurClientsSay";
