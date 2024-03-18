@@ -9,7 +9,7 @@ export const AboutCEO = () => {
           <Image
             role="img"
             src={CEOlg}
-            alt="CEO of Almuda"
+            alt="CEO of Almuda, adlmuda company, audit"
             fill
             loading="lazy"
             className="rounded-3xl bg-top object-contain sm:object-cover lg:object-contain"
