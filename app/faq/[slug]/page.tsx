@@ -32,7 +32,7 @@ const Salom = () => {
           <Image
             role="img"
             src={faqImg3}
-            alt={filteredData?.question}
+            alt={filteredData?.question || "Mavjud bo'lmagan savol"}
             className="rounded-xl"
             fill
             loading="lazy"
