@@ -12,6 +12,7 @@ import tax from "@/public/assets/img/tax.jpg";
 import taxaudit from "@/public/assets/img/taxaudit.jpg";
 import Penalitos from "@/public/assets/img/Penalitos.jpg";
 import DetalMore from "./DetalMore";
+import { FaTelegram } from "react-icons/fa6";
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
 import { CiCalendarDate } from "react-icons/ci";
 
@@ -99,6 +100,14 @@ const BlogsDetal = () => {
             href={`https://twitter.com/intent/tweet?text=Hey%2C+check+out+this+cool+site+I+found%3A+the+best+Accounting+Services+${baseUrl}`}
           >
             <FaXTwitter className="block text-[30px] hover:text-primary" />
+          </Link>
+          <Link
+            rel="noopener"
+            target="_blank"
+            className=""
+            href={`https://t.me/share/url?url=${baseUrl}/faq/${href}&text=${filteredData?.question} Hey%2C+check+out+this+cool+site+I+found%3A+the+best+Accounting+Services+${baseUrl}`}
+          >
+            <FaTelegram  className="block text-[30px] hover:text-primary" />
           </Link>
         </div>
       </div>

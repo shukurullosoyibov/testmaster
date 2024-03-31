@@ -2,6 +2,7 @@
 import { BsChevronDown, BsChevronUp } from "react-icons/bs";
 import { useState } from "react";
 import { BlogData } from "@/types";
+import { CiCalendarDate } from "react-icons/ci";
 import Link from 'next/link'
 import Image from "next/image";
 import faqImg from "@/public/assets/img/faqImg.jpg";
@@ -11,10 +12,10 @@ import taxaudit from "@/public/assets/img/taxaudit.jpg";
 import Penalitos from "@/public/assets/img/Penalitos.jpg";
 const variants = {
   accordion:
-    "flex flex-col rounded-xl border p-3 transition-all duration-300 hover:cursor-pointer sm:p-4",
+    "flex flex-col rounded-xl  border p-3 transition-all duration-300 hover:cursor-pointer sm:p-4",
   btn: "flex items-center justify-center rounded-full bg-primary/20 p-2 md:p-3",
   accordionText:
-    "pt-5 text-[15px] tracking-wide text-gray-800 transition-all duration-150 md:text-lg",
+    "pt-5 text-[15px] tracking-wide flex flex-col justify-between text-gray-800 transition-all duration-150 md:text-lg",
 };
 
 const BlogAccordion = ({ blogData }: { blogData: BlogData }) => {
@@ -51,29 +52,36 @@ const BlogAccordion = ({ blogData }: { blogData: BlogData }) => {
        
       </div>
       {isExpanded && (
-        <div id="accordion-content">
+        <div className="flex flex-col  justify-items-center ">
           <h2
           title={blogData.question}
           className={`${
             !isExpanded ? "truncate" : ""
           } text-base pt-5 font-medium text-primary md:text-xl`}
-        >
+         >
           {blogData.question}
         </h2>
-          <p
+          <div
             role="accordion-text"
             aria-label="accordion-text"
             title={blogData.answer}
-            className={variants.accordionText}
+            className={variants.accordionText }
           >
-            {blogData.answer.slice(0,100)} [...]
-            <span className="text-primary pl-5 text-lg font-semibold">
-              {blogData?.date} : Date
+            <p
+             role="accordion-text"
+             aria-label="accordion-text"
+             title={blogData.answer}
+            >
+               {blogData.answer.slice(0,100)} [...]
+            </p>
+        
+            <span className={ "text-primary pt-5 opacity-80 flex items-center text-base gap-2 fontVariant font-semibold"}>
+            <CiCalendarDate className="inline text-[30px] hover:text-primary" />  {blogData?.date}
             </span>
             <br />
             
             <Link href={`/blog/${KebabCase({ words: blogData.question })}`} className="hover:text-primary  text-blue">More information</Link>
-          </p>
+          </div>
         </div>
       )}
     </div>
