@@ -4,6 +4,8 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { faqData } from "@/constants";
 import { FaXTwitter } from "react-icons/fa6";
+import { FaTelegram } from "react-icons/fa6";
+
 import { FaFacebook } from "react-icons/fa";
 import Image from "next/image";
 import faqImg3 from "@/public/assets/img/faqImg3.jpg";
@@ -71,6 +73,14 @@ const Salom = () => {
             href={`https://twitter.com/intent/tweet?text=Hey%2C+check+out+this+cool+site+I+found%3A+the+best+Accounting+Services+${baseUrl}`}
           >
             <FaXTwitter className="block text-[30px] hover:text-primary" />
+          </Link>
+          <Link
+            rel="noopener"
+            target="_blank"
+            className=""
+            href={`https://t.me/share/url?url=${baseUrl}/faq/${href}&text=${filteredData?.question} Hey%2C+check+out+this+cool+site+I+found%3A+the+best+Accounting+Services+${baseUrl}`}
+          >
+            <FaTelegram  className="block text-[30px] hover:text-primary" />
           </Link>
         </div>
       </div>
